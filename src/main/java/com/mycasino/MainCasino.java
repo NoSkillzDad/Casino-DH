@@ -14,30 +14,31 @@ import static com.mycasino.GameMenu.gameChoice;
 public class MainCasino {
     public static void main(String[] args) {
 
+        Scanner scannerIn = new Scanner(System.in);
         int choice = 1;
 
         while (choice != 0) {
             choice = gameChoice();
             switch (choice) {
                 case 1 -> {
-                    HigherLowerGame highLowGame = new HigherLowerGame(1);
+                    HigherLowerGame highLowGame = new HigherLowerGame(scannerIn,1);
                     highLowGame.playGame();
                     break;
                 }
                 case 2 -> {
-                    Scanner scannerIn = new Scanner(System.in);
+//                    Scanner scannerIn = new Scanner(System.in);
                     BlackJackGame blackJackGame = new SimpleBlackJack(scannerIn);
                     blackJackGame.playGame();
                     break;
                 }
                 case 3 -> {
-                    Scanner scannerIn = new Scanner(System.in);
+//                    Scanner scannerIn = new Scanner(System.in);
                     BlackJackGame blackJackGame = new LowDeckBlackJack(scannerIn);
                     blackJackGame.playGame();
                     break;
                 }
                 case 4 -> {
-                    Scanner scannerIn = new Scanner(System.in);
+//                    Scanner scannerIn = new Scanner(System.in);
                     SlotMachineGame slotGame = new SlotMachineGame(scannerIn);
                     slotGame.playGame();
                     break;

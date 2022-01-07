@@ -5,7 +5,7 @@ public enum Symbol {
 
     public final char icon;
 
-    private Symbol(char icon) {
+    Symbol(char icon) {
         this.icon = icon;
     }
 }

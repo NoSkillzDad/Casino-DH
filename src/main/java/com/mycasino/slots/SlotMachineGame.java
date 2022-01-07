@@ -8,8 +8,8 @@ import com.mycasino.slots.machines.penny.Penny;
 import java.util.Scanner;
 
 public class SlotMachineGame {
-    private Scanner scannerIn;
-    private SlotMachine[] slotMachines;
+    private final Scanner scannerIn;
+    private final SlotMachine[] slotMachines;
     private SlotMachine activeMachine;
 
     private boolean isGameRunning;
@@ -39,7 +39,6 @@ public class SlotMachineGame {
             System.out.println("You dont have enough coins to play this game!");
             isGameRunning = false;
         }
-
         var move = getNextMove();
         if (move.equals("s")) {
             System.out.printf("Thank you for playing. Your balance is %d coins", currentCoins);
@@ -48,9 +47,14 @@ public class SlotMachineGame {
             this.currentCoins = currentCoins - activeMachine.getRollPrice();
             int winnings = activeMachine.roll();
             this.currentCoins = currentCoins + winnings;
-            System.out.println(activeMachine.render());;
+            System.out.println(activeMachine.render());
             System.out.printf("You won %d coins\n", winnings);
             System.out.printf("Your current balance is %d\n", currentCoins);
+
+            if (currentCoins < activeMachine.getRollPrice()) {
+                System.out.println("You dont have enough coins to play this game!");
+                isGameRunning = false;
+            }
         }
     }
 

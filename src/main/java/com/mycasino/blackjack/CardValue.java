@@ -1,8 +1,8 @@
 package com.mycasino.blackjack;
 
 public class CardValue {
-    private String name;
-    private int value;
+    private final String name;
+    private final int value;
 
     public CardValue(String name, int value) {
         this.name = name;

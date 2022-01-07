@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class Reel {
     private Symbol currentValue;
-    private Symbol[] possibleValues;
+    private final Symbol[] possibleValues;
 
     public Reel() {
         this.possibleValues = Symbol.values();
