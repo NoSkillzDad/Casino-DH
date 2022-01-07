@@ -6,16 +6,15 @@ public class HigherLowerGame {
     private boolean playingGame = true;
     private int numberGuesses = 0;
     private int gameDifficulty = 5; // 1 to 20
-    private int upperBound = gameDifficulty * 10;
+    private final int upperBound = gameDifficulty * 10;
     private int numberToGuess;
-    private Scanner input = new Scanner(System.in);
+    protected Scanner scannerIn;
     private int playerGuess;
 
     //Constructor
-    public HigherLowerGame() {}
-
-    public HigherLowerGame(int gameDifficulty) {
+    public HigherLowerGame(Scanner scannerIn, int gameDifficulty) {
         this.gameDifficulty = gameDifficulty;
+        this.scannerIn = scannerIn;
     }
 
     //Getters
@@ -36,7 +35,7 @@ public class HigherLowerGame {
 
         while (playingGame) {
             System.out.println("Enter a number between 1 and " + upperBound + ": ");
-            playerGuess = input.nextInt();
+            playerGuess = scannerIn.nextInt();
             numberGuesses++;
             if (playerGuess > numberToGuess) {
                 System.out.println("\n\rToo high, try again: ");

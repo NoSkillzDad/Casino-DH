@@ -1,7 +1,7 @@
 package com.mycasino.blackjack;
 
 public class CardSuit {
-    private String name;
+    private final String name;
     char symbol;
     String color;
 

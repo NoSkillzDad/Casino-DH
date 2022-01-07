@@ -3,7 +3,7 @@ package com.mycasino.slots.machines;
 import java.util.ArrayList;
 
 public abstract class SlotMachine {
-    private String name;
+    private final String name;
     protected ReelDeck reelDeck;
 
     public SlotMachine(String name, int numOfReels) {

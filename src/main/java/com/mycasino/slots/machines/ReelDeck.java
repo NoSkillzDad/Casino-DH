@@ -5,7 +5,7 @@ import com.mycasino.slots.Symbol;
 import java.util.List;
 
 public class ReelDeck {
-    private List<Reel> reels;
+    private final List<Reel> reels;
 
     public ReelDeck(List<Reel> reels) {
         this.reels = reels;
