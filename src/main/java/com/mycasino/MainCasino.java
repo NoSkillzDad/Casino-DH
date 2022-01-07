@@ -1,12 +1,15 @@
-package com.aperalta.casino;
+package com.mycasino;
 //import com.mycasino.highlow.HigherLowerGame;
 
 import com.mycasino.blackjack.BlackJackGame;
+import com.mycasino.blackjack.LowDeckBlackJack;
+import com.mycasino.blackjack.SimpleBlackJack;
 import com.mycasino.highlow.HigherLowerGame;
+import com.mycasino.slots.SlotMachineGame;
 
 import java.util.Scanner;
 
-import static com.aperalta.casino.GameMenu.gameChoice;
+import static com.mycasino.GameMenu.gameChoice;
 
 public class MainCasino {
     public static void main(String[] args) {
@@ -19,13 +22,25 @@ public class MainCasino {
                 case 1 -> {
                     HigherLowerGame highLowGame = new HigherLowerGame(1);
                     highLowGame.playGame();
+                    break;
                 }
                 case 2 -> {
                     Scanner scannerIn = new Scanner(System.in);
-                    BlackJackGame blackJackGame = new BlackJackGame(scannerIn);
+                    BlackJackGame blackJackGame = new SimpleBlackJack(scannerIn);
                     blackJackGame.playGame();
+                    break;
                 }
-                case 3 -> { //HangMan
+                case 3 -> {
+                    Scanner scannerIn = new Scanner(System.in);
+                    BlackJackGame blackJackGame = new LowDeckBlackJack(scannerIn);
+                    blackJackGame.playGame();
+                    break;
+                }
+                case 4 -> {
+                    Scanner scannerIn = new Scanner(System.in);
+                    SlotMachineGame slotGame = new SlotMachineGame(scannerIn);
+                    slotGame.playGame();
+                    break;
                 }
                 case 0 -> {
                     System.out.println("\nHave a good one!");
